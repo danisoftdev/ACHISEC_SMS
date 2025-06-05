@@ -780,7 +780,7 @@ class SMS {
      * @param string $name User's name
      * @return int|bool False if ce fails or returns user id if successful
      */
-    public function create_user($email, $pass, $name = FALSE, $full_name, $gender, $role, $dob, $address, $contact, $image) {
+    public function create_user($email, $pass, $full_name, $gender, $role, $dob, $address, $contact, $image, $name = FALSE) {
 
         $valid = TRUE;
 
@@ -2550,7 +2550,7 @@ class SMS {
         return $content;
     }
 
-    public function update_user_totp_secret($user_id = FALSE, $secret) {
+    public function update_user_totp_secret($secret, $user_id = FALSE) {
 
         if ($user_id == FALSE)
             $user_id = $this->CI->session->userdata('id');

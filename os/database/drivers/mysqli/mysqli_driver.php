@@ -31,6 +31,8 @@
  */
 class CI_DB_mysqli_driver extends CI_DB {
 
+	public $stricton;
+
 	var $dbdriver = 'mysqli';
 
 	// The character used for escaping

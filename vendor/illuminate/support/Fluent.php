@@ -70,6 +70,7 @@ class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      *
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->toArray();
@@ -117,6 +118,7 @@ class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * @param  mixed   $value
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->{$offset} = $value;
@@ -128,6 +130,7 @@ class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * @param  string  $offset
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->{$offset});

@@ -388,11 +388,15 @@ class CI_Input {
 					$flag = FILTER_FLAG_IPV6;
 					break;
 				default:
-					$flag = '';
+					$flag = null;
 					break;
 			}
 
-			return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
+			if ($flag !== null) {
+				return (bool) filter_var($ip, FILTER_VALIDATE_IP, $flag);
+			} else {
+				return (bool) filter_var($ip, FILTER_VALIDATE_IP);
+			}
 		}
 
 		if ($which !== 'ipv6' && $which !== 'ipv4')
