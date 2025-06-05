@@ -1162,6 +1162,7 @@ class Container implements ArrayAccess, ContainerContract
      * @param  string  $key
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($key)
     {
         return $this->bound($key);
@@ -1173,6 +1174,7 @@ class Container implements ArrayAccess, ContainerContract
      * @param  string  $key
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         return $this->make($key);
@@ -1185,6 +1187,7 @@ class Container implements ArrayAccess, ContainerContract
      * @param  mixed   $value
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         // If the value is not a Closure, we will make it one. This simply gives
@@ -1205,6 +1208,7 @@ class Container implements ArrayAccess, ContainerContract
      * @param  string  $key
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($key)
     {
         $key = $this->normalize($key);

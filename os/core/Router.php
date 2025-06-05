@@ -28,6 +28,9 @@
  * @link		http://codeigniter.com/user_guide/general/routing.html
  */
 class CI_Router {
+    public $config;
+    public $uri;
+
 
 	/**
 	 * Config class
@@ -35,7 +38,6 @@ class CI_Router {
 	 * @var object
 	 * @access public
 	 */
-	var $config;
 	/**
 	 * List of routes
 	 *

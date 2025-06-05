@@ -92,6 +92,7 @@ class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * @param  string  $offset
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->{$offset});
@@ -103,6 +104,7 @@ class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
      * @param  string  $offset
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->{$offset};
